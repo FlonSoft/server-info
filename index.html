@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta charset="UTF-8">
+
+        <link rel="icon" type="image/png" href="https://flolon.cc/assets/images/logo.png">
+
+        <title>Flolon Server Info</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <style>
+
+* {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+		"Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+	-webkit-font-smoothing: antialiased;
+}
+
+*,
+*:before,
+*:after {
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #fff;
+	color: #24292e;
+}
+
+img {
+	max-width: 100%;
+	border: 0;
+}
+
+/* hr */
+hr {
+	display: block;
+	height: 0;
+	margin: 15px 0;
+	overflow: hidden;
+	background: transparent;
+	border: 0;
+	border-bottom: 1px solid var(--hrBorderColor);
+}
+hr.md {
+	margin: 25px 0;
+}
+hr.lg {
+	margin: 50px 0;
+}
+/*
+					// include //
+ Containers, rows, flow-text, and other useful stuff.
+ Credit to: materializecss.com
+*/
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+    width: calc(100% - 20px);
+}
+
+/* clear fix */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+@media only screen and (min-width: 601px) {
+    .container {
+        width: 95%;
+    }
+}
+
+@media only screen and (min-width: 993px) {
+    .container {
+        width: 85%;
+    }
+}
+
+/* ulility */
+.hide {
+    display: none !important;
+}
+
+.left-align {
+    text-align: left;
+}
+
+.right-align {
+    text-align: right;
+}
+
+.center, .center-align {
+    text-align: center;
+}
+
+.left {
+    float: left !important;
+}
+
+.right {
+    float: right !important;
+}
+
+.truncate {
+    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.flex-grow {
+    display: inline-block;
+    flex-grow: 1;
+}
+/* -------- new styles -------- */
+
+/* links */
+
+a.link {
+	color: inherit;
+	font-family: inherit;
+}
+
+a.link:hover {
+	color: #3b3b3b;
+}
+
+a.link:active {
+	color: #1c1c1c;
+}
+
+a.noUnderline {
+	text-decoration: none;
+}
+
+/* topBar */
+
+.topBar {
+	display: flex;
+	align-items: center;
+	margin: 0 0 2rem 0;
+}
+
+.topBar a {
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	color: inherit;
+}
+
+.topBar .logo {
+	display: block;
+	margin: auto;
+	max-height: 75px;
+}
+
+.topBar .title {
+	margin: 0 4px;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: rgba(0, 0, 0, 0.68);
+}
+
+@media only screen and (max-width: 400px) {
+	.topBar {
+		display: block;
+		text-align: center;
+	}
+	
+	.topBar a {
+		display: block;
+	}
+	
+	.topBar .logo {
+		margin: auto auto .5rem auto;
+	}
+}
+
+/* card */
+
+.card {
+	padding: 1rem;
+	background-color: rgba(5, 85, 5, 0.075);
+	border-radius: 5px;
+	color: rgba(0, 0, 0, .8);
+}
+
+.card hr {
+	margin: 8px auto;
+}
+
+.card .a {
+	font-weight: 600;
+}
+
+.card .i {
+	font-family: monospace;
+}
+
+.card .s {
+	font-family: monospace;
+}
+
+/* bottomInfo */
+
+.bottomInfo {
+	display: flex;
+	align-items: center;
+	margin-top: .5rem;
+	color: rgba(0, 0, 0, 0.75);
+}
+
+.bottomInfo a:hover {
+	color: rgba(0, 0, 0, 0.65);
+}
+
+.bottomInfo a:active {
+	color: rgba(0, 0, 0, 0.85);
+}
+
+        </style>
+    </head>
+    <body>
+
+        <div class="container" style="margin-top: 2.5rem;">
+	
+            <div class="topBar">
+                <a href="/">
+                    <img class="logo" src="https://flolon.cc/assets/images/logo.png">
+                    <span class="title">Flolon Server Info</span>
+                </a>
+            </div>
+            
+            <div class="card">
+                <div><span class="a">Server state: </span><span class="i" id="server_state">-</span></div>
+                <div><span class="a">Status: </span><span class="i" id="status">-</span></div>		
+                <div><span class="a">Power status: </span><span class="i" id="power_status">-</span></div>
+                <hr>
+                <div><span class="a">OS: </span><span class="i" id="os">-</span></div>
+                <div><span class="a">Specs: </span><span class="i" id="specs">-</span></div>
+                <div><span class="a">Location: </span><span class="i" id="location">-</span></div>
+                <hr>
+                <div><span class="a">Bandwidth: </span><span class="i" id="current_bandwidth_gb">-</span><span class="s"> / </span><span class="i" id="allowed_bandwidth_gb">-</span></div>
+                <div><span class="a">Charges: </span><span class="i" id="pending_charges">-</span><span class="s"> / </span><span class="i" id="cost_per_month">-</span></div>
+                <hr>
+                <div><span class="a">Main IPv4: </span><span class="i" id="main_ip">-</span></div>
+                <div><span class="a">IPv4 netmask: </span><span class="i" id="netmask_v4">-</span></div>
+                <div><span class="a">IPv4 gateway: </span><span class="i" id="gateway_v4">-</span></div>
+                <div><span class="a">Main IPv6: </span><span class="i" id="v6_main_ip">-</span></div>
+                <div><span class="a">IPv6 network: </span><span class="i" id="v6_network">-</span></div>
+                <div><span class="a">IPv6 size: </span><span class="i" id="v6_network_size">-</span></div>
+        
+            </div>
+            <div class="bottomInfo">
+                <span class="flex-grow"></span>
+                <a class="link" href="https://srv-info-api.flolon.cc/">API</a>
+                <span style="margin: 0 4px; color: #aaa;">|</span>
+                <a class="link" onclick="loadInfo()" href="#">Refresh</a>
+            </div>
+            
+        </div><!-- /container -->
+
+        <script>
+
+function $(id){  //less typing
+    if(id.startsWith(".")){
+        return document.getElementsByClassName(id.substring(1));
+    }else{
+        return document.getElementById(id);
+    }
+}
+
+function loadInfo(){
+    $('server_state').innerHTML = 'loading...';
+    var xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        // request for data is done
+        var data = JSON.parse(xhttp.responseText);
+        
+		$('server_state').innerHTML = data['server_state'];
+		$('status').innerHTML = data['status'];
+		$('power_status').innerHTML = data['power_status'];
+		
+		$('os').innerHTML = data['os'];
+		$('specs').innerHTML = 'RAM: ' + data['ram'] + ', vCPUs: ' + data['vcpu_count'] + ', Disk: ' + data['disk'];
+		$('location').innerHTML = data['location'];
+		
+		$('pending_charges').innerHTML = data['pending_charges'];
+		$('cost_per_month').innerHTML = data['cost_per_month'];
+		$('current_bandwidth_gb').innerHTML = data['current_bandwidth_gb'];	
+		$('allowed_bandwidth_gb').innerHTML = data['allowed_bandwidth_gb'] + ' gb';
+		
+		$('main_ip').innerHTML = '<a class="link" target="_blank" href="http://' + data['main_ip'] + '">' + data['main_ip'] + '</a>';;
+		$('gateway_v4').innerHTML = data['gateway_v4'];
+		$('netmask_v4').innerHTML = data['netmask_v4'];
+		$('v6_main_ip').innerHTML = data['v6_main_ip'];
+		$('v6_network').innerHTML = data['v6_network'];
+		$('v6_network_size').innerHTML = data['v6_network_size'];
+		
+        // // hide load spinner
+        // $('load').style.display = 'none';
+        // $('releasesLoad').style.display = 'none';
+        
+    };
+    //send request for all data
+    xhttp.open("GET", 'https://srv-info-api.flolon.cc/', true);
+    xhttp.send();
+}
+
+loadInfo();
+
+        </script>
+    </body>
+</html>
