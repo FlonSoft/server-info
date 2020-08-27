@@ -29,8 +29,8 @@
 body {
 	margin: 0;
 	padding: 0;
-	background-color: #fff;
-	color: #24292e;
+	background-color: #1f1f1f;
+	color: #fff;
 }
 
 img {
@@ -46,7 +46,7 @@ hr {
 	overflow: hidden;
 	background: transparent;
 	border: 0;
-	border-bottom: 1px solid var(--hrBorderColor);
+	border-bottom: 1px solid rgba(255, 255, 255, 0.035);
 }
 hr.md {
 	margin: 25px 0;
@@ -130,11 +130,11 @@ a.link {
 }
 
 a.link:hover {
-	color: #3b3b3b;
+	color: #ffffff;
 }
 
 a.link:active {
-	color: #1c1c1c;
+	color: #eeeeee;
 }
 
 a.noUnderline {
@@ -166,7 +166,7 @@ a.noUnderline {
 	margin: 0 4px;
 	font-size: 1.5rem;
 	font-weight: 700;
-	color: rgba(0, 0, 0, 0.68);
+	color: rgba(255, 255, 255, 0.68);
 }
 
 @media only screen and (max-width: 400px) {
@@ -188,13 +188,13 @@ a.noUnderline {
 
 .card {
 	padding: 1rem;
-	background-color: rgba(5, 85, 5, 0.075);
+	background-color: rgba(247, 255, 247, 0.05);
 	border-radius: 5px;
-	color: rgba(0, 0, 0, .8);
+	color: rgba(255, 255, 255, 0.8);
 }
 
 .card hr {
-	margin: 8px auto;
+	margin: 12px auto;
 }
 
 .card .a {
@@ -215,15 +215,15 @@ a.noUnderline {
 	display: flex;
 	align-items: center;
 	margin-top: .5rem;
-	color: rgba(0, 0, 0, 0.75);
+	color: rgba(255, 255, 255, 0.75);
 }
 
 .bottomInfo a:hover {
-	color: rgba(0, 0, 0, 0.65);
+	color: rgba(255, 255, 255, 0.65);
 }
 
 .bottomInfo a:active {
-	color: rgba(0, 0, 0, 0.85);
+	color: rgba(255, 255, 255, 0.85);
 }
 
         </style>
@@ -304,10 +304,6 @@ function loadInfo(){
 		$('v6_main_ip').innerHTML = data['v6_main_ip'];
 		$('v6_network').innerHTML = data['v6_network'];
 		$('v6_network_size').innerHTML = data['v6_network_size'];
-		
-        // // hide load spinner
-        // $('load').style.display = 'none';
-        // $('releasesLoad').style.display = 'none';
         
     };
     //send request for all data
