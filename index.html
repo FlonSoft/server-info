@@ -309,8 +309,8 @@ function loadInfo(){
         
     };
     //send request for all data
-    var apiUrl = 'http://srv-info-api.flolon.cc/info.php';
-    $('apiLink').href = 'http://srv-info-api.flolon.cc/info.php';
+    var apiUrl = 'https://srv-info-api.flolon.cc/info.php';
+    $('apiLink').href = apiUrl;
     xhttp.open("GET", apiUrl, true);
     xhttp.send();
 }
