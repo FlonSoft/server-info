@@ -263,7 +263,7 @@ a.noUnderline {
             </div>
             <div class="bottomInfo">
                 <span class="flex-grow"></span>
-                <a class="link" href="https://srv-info-api.flolon.cc/">API</a>
+                <a class="link" id="apiLink" href="#">API</a>
                 <span style="margin: 0 4px; color: #aaa;">|</span>
                 <a class="link" onclick="loadInfo()" href="#">Refresh</a>
             </div>
@@ -309,7 +309,9 @@ function loadInfo(){
         
     };
     //send request for all data
-    xhttp.open("GET", 'http://srv-info-api.flolon.cc/info.php', true);
+    var apiUrl = 'http://srv-info-api.flolon.cc/info.php';
+    $('apiLink').href = 'http://srv-info-api.flolon.cc/info.php';
+    xhttp.open("GET", apiUrl, true);
     xhttp.send();
 }
 
