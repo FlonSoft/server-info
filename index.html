@@ -168,7 +168,7 @@ a.noUnderline {
 	margin: 0 4px;
 	font-size: 1.5rem;
 	font-weight: 700;
-	color: rgba(255, 255, 255, 0.8);
+	color: rgba(255, 255, 255, 0.92);
 }
 
 @media only screen and (max-width: 400px) {
@@ -240,6 +240,10 @@ a.noUnderline {
                     <span class="title">Flolon Server Info</span>
                 </a>
             </div>
+
+            <div id="error" class="card" style="display: none; margin-bottom: .5rem;">
+                <span>Loading...</span>
+            </div>
             
             <div class="card">
                 <div><span class="a">Server state: </span><span class="i" id="server_state">-</span></div>
@@ -281,32 +285,38 @@ function $(id){  //less typing
 }
 
 function loadInfo(){
-    $('server_state').innerHTML = 'loading...';
+    $('error').innerHTML = 'Loading..';
+    $('error').style.display = '';
     var xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-        // request for data is done
-        var data = JSON.parse(xhttp.responseText);
-        
-		$('server_state').innerHTML = data['server_state'];
-		$('status').innerHTML = data['status'];
-		$('power_status').innerHTML = data['power_status'];
-		
-		$('os').innerHTML = data['os'];
-		$('specs').innerHTML = 'RAM: ' + data['ram'] + ', vCPUs: ' + data['vcpu_count'] + ', Disk: ' + data['disk'];
-		$('location').innerHTML = data['location'];
-		
-		$('pending_charges').innerHTML = data['pending_charges'];
-		$('cost_per_month').innerHTML = data['cost_per_month'];
-		$('current_bandwidth_gb').innerHTML = data['current_bandwidth_gb'];	
-		$('allowed_bandwidth_gb').innerHTML = data['allowed_bandwidth_gb'] + ' gb';
-		
-		$('main_ip').innerHTML = '<a class="link" target="_blank" href="http://' + data['main_ip'] + '">' + data['main_ip'] + '</a>';;
-		$('gateway_v4').innerHTML = data['gateway_v4'];
-		$('netmask_v4').innerHTML = data['netmask_v4'];
-		$('v6_main_ip').innerHTML = data['v6_main_ip'];
-		$('v6_network').innerHTML = data['v6_network'];
-		$('v6_network_size').innerHTML = data['v6_network_size'];
-        
+    xhttp.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            // request for data is done
+            var data = JSON.parse(xhttp.responseText);
+            $('error').style.display = 'none';
+            
+            $('server_state').innerHTML = data['server_state'];
+            $('status').innerHTML = data['status'];
+            $('power_status').innerHTML = data['power_status'];
+            
+            $('os').innerHTML = data['os'];
+            $('specs').innerHTML = 'RAM: ' + data['ram'] + ', vCPUs: ' + data['vcpu_count'] + ', Disk: ' + data['disk'];
+            $('location').innerHTML = data['location'];
+            
+            $('pending_charges').innerHTML = data['pending_charges'];
+            $('cost_per_month').innerHTML = data['cost_per_month'];
+            $('current_bandwidth_gb').innerHTML = data['current_bandwidth_gb'];	
+            $('allowed_bandwidth_gb').innerHTML = data['allowed_bandwidth_gb'] + ' gb';
+            
+            $('main_ip').innerHTML = '<a class="link" target="_blank" href="http://' + data['main_ip'] + '">' + data['main_ip'] + '</a>';;
+            $('gateway_v4').innerHTML = data['gateway_v4'];
+            $('netmask_v4').innerHTML = data['netmask_v4'];
+            $('v6_main_ip').innerHTML = data['v6_main_ip'];
+            $('v6_network').innerHTML = data['v6_network'];
+            $('v6_network_size').innerHTML = data['v6_network_size'];
+        }else {
+            $('error').innerHTML = '<span style="color: rgba(240, 100, 100, 1);">Error</span>';
+            $('error').style.display = '';
+        }
     };
     //send request for all data
     var apiUrl = 'https://srv-info-api.flolon.cc/info.php';
