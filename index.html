@@ -1,333 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        
-        <meta charset="UTF-8">
 
-        <link rel="icon" type="image/png" href="https://flolon.cc/assets/images/logo.png">
+<head>
 
-        <title>Flolon Server Info</title>
+    <meta charset="UTF-8">
 
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="https://flolon.cc/assets/images/logo.png">
 
-        <style>
+    <title>Flolon Server Info</title>
 
-* {
-	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
-		"Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
-		"Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-	-webkit-font-smoothing: antialiased;
-}
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-*,
-*:before,
-*:after {
-	-webkit-box-sizing: inherit;
-	box-sizing: inherit;
-}
+    <style>
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+                "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+                "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+            -webkit-font-smoothing: antialiased;
+        }
 
-body {
-	margin: 0;
-	padding: 0;
-	background-color: #131a26;
-	color: #fff;
-}
+        *,
+        *:before,
+        *:after {
+            -webkit-box-sizing: inherit;
+            box-sizing: inherit;
+        }
 
-img {
-	max-width: 100%;
-	border: 0;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #131a26;
+            color: #fff;
+        }
 
-/* hr */
-hr {
-	display: block;
-	height: 0;
-	margin: 15px 0;
-	overflow: hidden;
-	background: transparent;
-	border: 0;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
+        img {
+            max-width: 100%;
+            border: 0;
+        }
 
-hr.md {
-	margin: 25px 0;
-}
+        /* hr */
+        hr {
+            display: block;
+            height: 0;
+            margin: 15px 0;
+            overflow: hidden;
+            background: transparent;
+            border: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
 
-hr.lg {
-	margin: 50px 0;
-}
-/*
+        hr.md {
+            margin: 25px 0;
+        }
+
+        hr.lg {
+            margin: 50px 0;
+        }
+
+        /*
 					// include //
- Containers, rows, flow-text, and other useful stuff.
- Credit to: materializecss.com
-*/
-.container {
-    margin: 0 auto;
-    max-width: 1280px;
-    width: calc(100% - 20px);
-}
-
-/* clear fix */
-.clearfix::after {
-    content: "";
-    clear: both;
-    display: table;
-}
-
-@media only screen and (min-width: 601px) {
-    .container {
-        width: 95%;
-    }
-}
-
-@media only screen and (min-width: 993px) {
-    .container {
-        width: 85%;
-    }
-}
-
-/* ulility */
-.hide {
-    display: none !important;
-}
-
-.left-align {
-    text-align: left;
-}
-
-.right-align {
-    text-align: right;
-}
-
-.center, .center-align {
-    text-align: center;
-}
-
-.left {
-    float: left !important;
-}
-
-.right {
-    float: right !important;
-}
-
-.truncate {
-    display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-}
-
-.flex-grow {
-    display: inline-block;
-    flex-grow: 1;
-}
-/* -------- new styles -------- */
-
-/* links */
-
-a.link {
-	color: inherit;
-	font-family: inherit;
-}
-
-a.link:hover {
-	color: #ffffff;
-}
-
-a.link:active {
-	color: #eeeeee;
-}
-
-a.noUnderline {
-	text-decoration: none;
-}
-
-/* topBar */
-
-.topBar {
-	display: flex;
-	align-items: center;
-	margin: 0 0 2rem 0;
-}
-
-.topBar a {
-	display: flex;
-	align-items: center;
-	text-decoration: none;
-	color: inherit;
-}
-
-.topBar .logo {
-	display: block;
-	margin: auto;
-	max-height: 75px;
-}
-
-.topBar .title {
-	margin: 0 4px;
-	font-size: 1.5rem;
-	font-weight: 700;
-	color: rgba(255, 255, 255, 0.92);
-}
-
-@media only screen and (max-width: 400px) {
-	.topBar {
-		display: block;
-		text-align: center;
-	}
-	
-	.topBar a {
-		display: block;
-	}
-	
-	.topBar .logo {
-		margin: auto auto .5rem auto;
-	}
-}
-
-/* card */
-
-.card {
-	padding: 1rem;
-	background-color: #212937;
-	border-radius: 5px;
-	color: rgba(255, 255, 255, 0.8);
-}
-
-.card hr {
-	margin: 12px auto;
-}
-
-.card .a {
-	font-weight: 600;
-}
-
-.card .i {
-	font-family: monospace;
-}
-
-.card .s {
-	font-family: monospace;
-}
-
-/* bottomInfo */
-
-.bottomInfo {
-	display: flex;
-	align-items: center;
-	margin-top: .5rem;
-	color: rgba(255, 255, 255, 0.75);
-}
-
-.bottomInfo a:hover {
-	color: rgba(255, 255, 255, 0.65);
-}
-
-.bottomInfo a:active {
-	color: rgba(255, 255, 255, 0.85);
-}
-
-        </style>
-    </head>
-    <body>
-
-        <div class="container" style="margin-top: 2.5rem;">
-	
-            <div class="topBar">
-                <a href="https://flolon.cc">
-                    <img class="logo" src="data:image/png;base64,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">
-                    <span class="title">Flolon Server Info</span>
-                </a>
-            </div>
-
-            <div id="error" class="card" style="display: none; margin-bottom: .5rem;">
-                <span>Loading....</span>
-            </div>
-            
-            <div class="card">
-                <div><span class="a">Server state: </span><span class="i" id="server_state">-</span></div>
-                <div><span class="a">Status: </span><span class="i" id="status">-</span></div>		
-                <div><span class="a">Power status: </span><span class="i" id="power_status">-</span></div>
-                <hr>
-                <div><span class="a">OS: </span><span class="i" id="os">-</span></div>
-                <div><span class="a">Specs: </span><span class="i" id="specs">-</span></div>
-                <div><span class="a">Location: </span><span class="i" id="location">-</span></div>
-                <hr>
-                <div><span class="a">Bandwidth: </span><span class="i" id="current_bandwidth_gb">-</span><span class="s"> / </span><span class="i" id="allowed_bandwidth_gb">-</span></div>
-                <div><span class="a">Charges: </span><span class="i" id="pending_charges">-</span><span class="s"> / </span><span class="i" id="cost_per_month">-</span></div>
-                <hr>
-                <div><span class="a">Main IPv4: </span><span class="i" id="main_ip">-</span></div>
-                <div><span class="a">IPv4 netmask: </span><span class="i" id="netmask_v4">-</span></div>
-                <div><span class="a">IPv4 gateway: </span><span class="i" id="gateway_v4">-</span></div>
-                <div><span class="a">Main IPv6: </span><span class="i" id="v6_main_ip">-</span></div>
-                <div><span class="a">IPv6 network: </span><span class="i" id="v6_network">-</span></div>
-                <div><span class="a">IPv6 size: </span><span class="i" id="v6_network_size">-</span></div>
-        
-            </div>
-            <div class="bottomInfo">
-                <span class="flex-grow"></span>
-                <a class="link" id="apiLink" href="#">API</a>
-                <span style="margin: 0 4px; color: #aaa;">|</span>
-                <a class="link" onclick="loadInfo()" href="#">Refresh</a>
-            </div>
-            
-        </div><!-- /container -->
-
-        <script>
-
-function $(id){  //less typing
-    if(id.startsWith(".")){
-        return document.getElementsByClassName(id.substring(1));
-    }else{
-        return document.getElementById(id);
-    }
-}
-
-function loadInfo(){
-    $('error').innerHTML = 'Loading...';
-    $('error').style.display = '';
-    var xhttp = new XMLHttpRequest();
-    xhttp.onreadystatechange = function() {
-        if (this.readyState == 4 && this.status == 200) {
-            // request for data is done
-            var data = JSON.parse(xhttp.responseText);
-            $('error').style.display = 'none';
-            
-            $('server_state').innerHTML = data['server_state'];
-            $('status').innerHTML = data['status'];
-            $('power_status').innerHTML = data['power_status'];
-            
-            $('os').innerHTML = data['os'];
-            $('specs').innerHTML = 'RAM: ' + data['ram'] + ', vCPUs: ' + data['vcpu_count'] + ', Disk: ' + data['disk'];
-            $('location').innerHTML = data['location'];
-            
-            $('pending_charges').innerHTML = data['pending_charges'];
-            $('cost_per_month').innerHTML = data['cost_per_month'];
-            $('current_bandwidth_gb').innerHTML = data['current_bandwidth_gb'];	
-            $('allowed_bandwidth_gb').innerHTML = data['allowed_bandwidth_gb'] + ' gb';
-            
-            $('main_ip').innerHTML = '<a class="link" target="_blank" href="http://' + data['main_ip'] + '">' + data['main_ip'] + '</a>';;
-            $('gateway_v4').innerHTML = data['gateway_v4'];
-            $('netmask_v4').innerHTML = data['netmask_v4'];
-            $('v6_main_ip').innerHTML = data['v6_main_ip'];
-            $('v6_network').innerHTML = data['v6_network'];
-            $('v6_network_size').innerHTML = data['v6_network_size'];
+        Containers, rows, flow-text, and other useful stuff.
+        Credit to: materializecss.com
+        */
+        .container {
+            margin: 0 auto;
+            max-width: 1280px;
+            width: calc(100% - 20px);
         }
-        xhttp.onerror = function() {
-            $('error').innerHTML = '<span style="color: rgba(240, 100, 100, 1);">Error ('+this.status+')</span>';
+
+        /* clear fix */
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+
+        @media only screen and (min-width: 601px) {
+            .container {
+                width: 95%;
+            }
+        }
+
+        @media only screen and (min-width: 993px) {
+            .container {
+                width: 85%;
+            }
+        }
+
+        /* ulility */
+        .hide {
+            display: none !important;
+        }
+
+        .left-align {
+            text-align: left;
+        }
+
+        .right-align {
+            text-align: right;
+        }
+
+        .center,
+        .center-align {
+            text-align: center;
+        }
+
+        .left {
+            float: left !important;
+        }
+
+        .right {
+            float: right !important;
+        }
+
+        .truncate {
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .flex-grow {
+            display: inline-block;
+            flex-grow: 1;
+        }
+
+        /* -------- new styles -------- */
+
+        /* links */
+
+        a.link {
+            color: inherit;
+            font-family: inherit;
+        }
+
+        a.link:hover {
+            color: #ffffff;
+        }
+
+        a.link:active {
+            color: #eeeeee;
+        }
+
+        a.noUnderline {
+            text-decoration: none;
+        }
+
+        /* topBar */
+
+        .topBar {
+            display: flex;
+            align-items: center;
+            margin: 0 0 2rem 0;
+        }
+
+        .topBar a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .topBar .logo {
+            display: block;
+            margin: auto;
+            max-height: 75px;
+        }
+
+        .topBar .title {
+            margin: 0 4px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.92);
+        }
+
+        @media only screen and (max-width: 400px) {
+            .topBar {
+                display: block;
+                text-align: center;
+            }
+
+            .topBar a {
+                display: block;
+            }
+
+            .topBar .logo {
+                margin: auto auto .5rem auto;
+            }
+        }
+
+        /* card */
+
+        .card {
+            padding: 1rem;
+            background-color: #212937;
+            border-radius: 5px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .card hr {
+            margin: 12px auto;
+        }
+
+        .card .a {
+            font-weight: 600;
+        }
+
+        .card .i {
+            font-family: monospace;
+        }
+
+        .card .s {
+            font-family: monospace;
+        }
+
+        /* bottomInfo */
+
+        .bottomInfo {
+            display: flex;
+            align-items: center;
+            margin-top: .5rem;
+            color: rgba(255, 255, 255, 0.75);
+        }
+
+        .bottomInfo a:hover {
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+        .bottomInfo a:active {
+            color: rgba(255, 255, 255, 0.85);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" style="margin-top: 2.5rem;">
+
+        <div class="topBar">
+            <a href="https://flolon.dev">
+                <img class="logo"
+                    src="data:image/png;base64,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">
+                <span class="title">Flolon Server Info</span>
+            </a>
+        </div>
+
+        <div id="error" class="card" style="display: none; margin-bottom: .5rem;">
+            <span>Loading....</span>
+        </div>
+
+        <div class="card">
+            <div><span class="a">Server status: </span><span class="i" id="server_status">-</span></div>
+            <div><span class="a">Status: </span><span class="i" id="status">-</span></div>
+            <div><span class="a">Power status: </span><span class="i" id="power_status">-</span></div>
+            <hr>
+            <div><span class="a">OS: </span><span class="i" id="os">-</span></div>
+            <div><span class="a">Specs: </span><span class="i" id="specs">-</span></div>
+            <div><span class="a">Location: </span><span class="i" id="location">-</span></div>
+            <hr>
+            <div><span class="a">Main IPv4: </span><span class="i" id="main_ip">-</span></div>
+            <div><span class="a">IPv4 netmask: </span><span class="i" id="netmask_v4">-</span></div>
+            <div><span class="a">IPv4 gateway: </span><span class="i" id="gateway_v4">-</span></div>
+            <div><span class="a">Main IPv6: </span><span class="i" id="v6_main_ip">-</span></div>
+            <div><span class="a">IPv6 network: </span><span class="i" id="v6_network">-</span></div>
+            <div><span class="a">IPv6 size: </span><span class="i" id="v6_network_size">-</span></div>
+
+        </div>
+        <div class="bottomInfo">
+            <span class="flex-grow"></span>
+            <a class="link" id="apiLink" href="#">API</a>
+            <span style="margin: 0 4px; color: #aaa;">|</span>
+            <a class="link" onclick="loadInfo()" href="#">Refresh</a>
+        </div>
+
+    </div><!-- /container -->
+
+    <script>
+
+        function $(id) {  //less typing
+            if (id.startsWith(".")) {
+                return document.getElementsByClassName(id.substring(1));
+            } else {
+                return document.getElementById(id);
+            }
+        }
+
+        function loadInfo() {
+            $('error').innerHTML = 'Loading...';
             $('error').style.display = '';
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    // request for data is done
+                    var data = JSON.parse(xhttp.responseText);
+                    $('error').style.display = 'none';
+
+                    $('server_status').innerHTML = data['server_status'];
+                    $('status').innerHTML = data['status'];
+                    $('power_status').innerHTML = data['power_status'];
+
+                    $('os').innerHTML = data['os'];
+                    $('specs').innerHTML = 'RAM: ' + data['ram'] + ', vCPUs: ' + data['vcpu_count'] + ', Disk: ' + data['disk'];
+                    $('location').innerHTML = data['region'];
+
+                    $('main_ip').innerHTML = '<a class="link" target="_blank" href="http://' + data['main_ip'] + '">' + data['main_ip'] + '</a>';;
+                    $('gateway_v4').innerHTML = data['gateway_v4'];
+                    $('netmask_v4').innerHTML = data['netmask_v4'];
+                    $('v6_main_ip').innerHTML = data['v6_main_ip'];
+                    $('v6_network').innerHTML = data['v6_network'];
+                    $('v6_network_size').innerHTML = data['v6_network_size'];
+                }
+                xhttp.onerror = function () {
+                    $('error').innerHTML = '<span style="color: rgba(240, 100, 100, 1);">Error (' + this.status + ')</span>';
+                    $('error').style.display = '';
+                }
+            };
+            //send request for all data
+            var apiUrl = 'https://server2.flolon.dev/api/info.php';
+            $('apiLink').href = apiUrl;
+            xhttp.open("GET", apiUrl, true);
+            xhttp.send();
         }
-    };
-    //send request for all data
-    var apiUrl = 'https://srv-info-api.flolon.cc/info.php';
-    $('apiLink').href = apiUrl;
-    xhttp.open("GET", apiUrl, true);
-    xhttp.send();
-}
 
-loadInfo();
+        loadInfo();
 
-        </script>
-    </body>
+    </script>
+</body>
+
 </html>
