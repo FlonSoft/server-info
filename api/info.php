@@ -1,6 +1,6 @@
 <?php
 
-include("../../api-key.inc.php");
+include("../../apiKey.inc.php");
 
 header("Access-Control-Allow-Origin: *");
 
